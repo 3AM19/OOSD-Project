@@ -26,7 +26,7 @@ public:
     QWidget *centralwidget;
     QPushButton *SignUpButton;
     QPushButton *LogInButton;
-    QLabel *label;
+    QLabel *title;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,17 +39,18 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         SignUpButton = new QPushButton(centralwidget);
         SignUpButton->setObjectName(QString::fromUtf8("SignUpButton"));
-        SignUpButton->setGeometry(QRect(360, 150, 100, 51));
+        SignUpButton->setGeometry(QRect(320, 130, 100, 51));
         LogInButton = new QPushButton(centralwidget);
         LogInButton->setObjectName(QString::fromUtf8("LogInButton"));
-        LogInButton->setGeometry(QRect(360, 240, 100, 51));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(270, 60, 291, 41));
+        LogInButton->setGeometry(QRect(320, 200, 100, 51));
+        LogInButton->setCursor(QCursor(Qt::ArrowCursor));
+        title = new QLabel(centralwidget);
+        title->setObjectName(QString::fromUtf8("title"));
+        title->setGeometry(QRect(160, 50, 481, 71));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -65,7 +66,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         SignUpButton->setText(QCoreApplication::translate("MainWindow", "Sign Up", nullptr));
         LogInButton->setText(QCoreApplication::translate("MainWindow", "Log In", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:700;\">The BSN Stock Simulator</span></p></body></html>", nullptr));
+        title->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:700;\">The BSN Stock Simulator</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

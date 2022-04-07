@@ -21,36 +21,59 @@ QT_BEGIN_NAMESPACE
 class Ui_SignUpWindow
 {
 public:
-    QLabel *label;
+    QLabel *title;
     QLineEdit *usernameInput;
     QLabel *usernameLabel;
     QLineEdit *passwordInput;
-    QLabel *label_2;
+    QLabel *passwordlabel;
     QPushButton *submitButton;
+    QPushButton *backButton;
+    QLabel *name;
+    QLineEdit *nameInput;
+    QLabel *email;
+    QLineEdit *emailInput;
 
     void setupUi(QDialog *SignUpWindow)
     {
         if (SignUpWindow->objectName().isEmpty())
             SignUpWindow->setObjectName(QString::fromUtf8("SignUpWindow"));
         SignUpWindow->resize(800, 600);
-        label = new QLabel(SignUpWindow);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(260, 90, 291, 41));
+        title = new QLabel(SignUpWindow);
+        title->setObjectName(QString::fromUtf8("title"));
+        title->setGeometry(QRect(170, 70, 471, 71));
         usernameInput = new QLineEdit(SignUpWindow);
         usernameInput->setObjectName(QString::fromUtf8("usernameInput"));
-        usernameInput->setGeometry(QRect(330, 190, 113, 21));
+        usernameInput->setGeometry(QRect(340, 240, 113, 21));
         usernameLabel = new QLabel(SignUpWindow);
         usernameLabel->setObjectName(QString::fromUtf8("usernameLabel"));
-        usernameLabel->setGeometry(QRect(260, 190, 61, 16));
+        usernameLabel->setGeometry(QRect(240, 240, 71, 16));
         passwordInput = new QLineEdit(SignUpWindow);
         passwordInput->setObjectName(QString::fromUtf8("passwordInput"));
-        passwordInput->setGeometry(QRect(330, 230, 113, 21));
-        label_2 = new QLabel(SignUpWindow);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(260, 230, 58, 16));
+        passwordInput->setGeometry(QRect(340, 310, 113, 21));
+        passwordlabel = new QLabel(SignUpWindow);
+        passwordlabel->setObjectName(QString::fromUtf8("passwordlabel"));
+        passwordlabel->setGeometry(QRect(240, 310, 71, 16));
         submitButton = new QPushButton(SignUpWindow);
         submitButton->setObjectName(QString::fromUtf8("submitButton"));
-        submitButton->setGeometry(QRect(310, 270, 100, 32));
+        submitButton->setGeometry(QRect(190, 340, 80, 29));
+        submitButton->setCheckable(false);
+        backButton = new QPushButton(SignUpWindow);
+        backButton->setObjectName(QString::fromUtf8("backButton"));
+        backButton->setGeometry(QRect(440, 350, 80, 29));
+        backButton->setCheckable(false);
+        name = new QLabel(SignUpWindow);
+        name->setObjectName(QString::fromUtf8("name"));
+        name->setGeometry(QRect(240, 200, 51, 20));
+        name->setCursor(QCursor(Qt::IBeamCursor));
+        nameInput = new QLineEdit(SignUpWindow);
+        nameInput->setObjectName(QString::fromUtf8("nameInput"));
+        nameInput->setGeometry(QRect(340, 200, 113, 21));
+        email = new QLabel(SignUpWindow);
+        email->setObjectName(QString::fromUtf8("email"));
+        email->setGeometry(QRect(240, 270, 63, 20));
+        emailInput = new QLineEdit(SignUpWindow);
+        emailInput->setObjectName(QString::fromUtf8("emailInput"));
+        emailInput->setGeometry(QRect(340, 270, 113, 21));
 
         retranslateUi(SignUpWindow);
 
@@ -60,10 +83,13 @@ public:
     void retranslateUi(QDialog *SignUpWindow)
     {
         SignUpWindow->setWindowTitle(QCoreApplication::translate("SignUpWindow", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("SignUpWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:700;\">The BSN Stock Simulator</span></p></body></html>", nullptr));
+        title->setText(QCoreApplication::translate("SignUpWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:700;\">The BSN Stock Simulator</span></p></body></html>", nullptr));
         usernameLabel->setText(QCoreApplication::translate("SignUpWindow", "Username", nullptr));
-        label_2->setText(QCoreApplication::translate("SignUpWindow", "Password", nullptr));
+        passwordlabel->setText(QCoreApplication::translate("SignUpWindow", "Password", nullptr));
         submitButton->setText(QCoreApplication::translate("SignUpWindow", "Submit", nullptr));
+        backButton->setText(QCoreApplication::translate("SignUpWindow", "Back ", nullptr));
+        name->setText(QCoreApplication::translate("SignUpWindow", "Name ", nullptr));
+        email->setText(QCoreApplication::translate("SignUpWindow", "eMail", nullptr));
     } // retranslateUi
 
 };

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "signupwindow.h"
+#include "loginwindow.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -22,3 +23,9 @@ void MainWindow::on_SignUpButton_clicked()
     goToSignUp.exec();
 }
 
+void MainWindow::on_LogInButton_clicked(){
+    this->hide();
+    LogInWindow goToLogIn;
+    goToLogIn.setModal(true);
+    goToLogIn.exec();
+}
